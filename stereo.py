@@ -40,8 +40,9 @@ class StereoSound:
             left_channel, right_channel = audio[0], audio[1]
             self.sampling_frequency = left_channel.sampling_frequency
             if self.sampling_frequency != right_channel.sampling_frequency:
-                message_3 = 'channels have different sampling frequencies.'
-                raise ValueError(message_3)
+                message_31 = 'channels cannot have different '
+                message_32 = 'sampling frequencies.'
+                raise ValueError(''.join((message_31, message_32)))
             self.left_channel = left_channel
             self.right_channel = right_channel
     
